@@ -1,0 +1,40 @@
+{% extends "templates/search-base.html" %}
+
+{% block title %}{{ app-title }} - Directory of Landing Pages for EOSDIS Collections{% endblock %}
+
+{% block main-content %}
+<h2 class="cover-heading">Provider Holdings Directory</h2>
+<h3 class="cover-heading">EOSDIS</h3>
+
+<p>
+  Listed below are all of the EOSDIS providers along with their
+  collection count; each is linked to a provider-specific CMR Search
+  page. Note that if a provider has no collections, it will not
+  be linked.
+</p>
+
+<table id="data-providers">
+  <thead>
+  <tr>
+    <th>Provider Name</th>
+    <th>Collection Count</th>
+  </tr>
+  </thead>
+  <tbody>
+  {% for provider in providers %}
+    <tr>
+      <td>
+        {% if provider.collections-count = 0 %}
+          {{ provider.id }}
+        {% else %}
+          <a href="{{ base-url }}site/collections/directory/{{ provider.id }}/{{ provider.tag }}">{{ provider.id }}</a>
+        {% endif %}
+      </td>
+      <td class="align-r">
+        {{ provider.collections-count }}
+      </td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

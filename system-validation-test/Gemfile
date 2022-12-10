@@ -1,0 +1,11 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+group :test do
+  gem 'cucumber'
+  gem 'httparty'
+  gem 'jsonpath'
+  gem 'nokogiri'
+  gem 'rspec'
+end

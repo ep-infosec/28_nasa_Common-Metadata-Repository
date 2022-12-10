@@ -1,0 +1,284 @@
+[
+      "Humanizer configuration file, used for testing and bookkeeping purposes",
+      "This file contains an array of humanizers in the",
+      "format that will be used by the ingest API. Order is not important. String",
+      "entries are treated as comments. For details on humanizers and the format, see",
+      "https://wiki.earthdata.nasa.gov/display/CMR/Humanizing+Facets+Design",
+
+      {
+          "field": "granule_data_format",
+          "order": 0,
+          "replacement_value": "NetCDF",
+          "reportable": true,
+          "source_value": "NetCDF Classic",
+          "type": "alias"
+      },
+      {
+          "field": "granule_data_format",
+          "order": 0,
+          "replacement_value": "NetCDF",
+          "reportable": true,
+          "source_value": "NetCDF-3",
+          "type": "alias"
+      },
+      {
+          "field": "granule_data_format",
+          "order": 0,
+          "replacement_value": "NetCDF",
+          "reportable": true,
+          "source_value": "NetCDF-4",
+          "type": "alias"
+      },
+      {
+          "field": "granule_data_format",
+          "order": 0,
+          "replacement_value": "NetCDF",
+          "reportable": true,
+          "source_value": "NetCDF-CF",
+          "type": "alias"
+      },
+      {
+          "field": "granule_data_format",
+          "order": 0,
+          "replacement_value": "NetCDF",
+          "reportable": true,
+          "source_value": "NetCDF-CF/Radial",
+          "type": "alias"
+      },
+      {"type": "trim_whitespace", "field": "platform", "order": -100},
+      {"type": "trim_whitespace", "field": "instrument", "order": -100},
+      {"type": "trim_whitespace", "field": "science_keyword", "order": -100},
+      {"type": "trim_whitespace", "field": "project", "order": -100},
+      {"type": "trim_whitespace", "field": "processing_level", "order": -100},
+      {"type": "trim_whitespace", "field": "organization", "order": -100},
+      {"type": "trim_whitespace", "field": "tiling_system_name", "order": -100},
+
+      {"type": "capitalize", "field": "science_keyword", "order": -10},
+
+      {
+        "type": "alias",
+        "field": "science_keyword",
+        "source_value": "Bioosphere",
+        "replacement_value": "Biosphere",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "platform",
+        "source_value": "AM-1",
+        "replacement_value": "Terra",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "platform",
+        "source_value": "ISS",
+        "replacement_value": "International Space Station",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "ignore",
+        "field": "instrument",
+        "source_value": "NOT APPLICABLE",
+        "order": 0
+      },
+      {
+        "type": "ignore",
+        "field": "instrument",
+        "source_value": "Not provided",
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "instrument",
+        "source_value": "GPS",
+        "replacement_value": "GPS RECEIVERS",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "instrument",
+        "source_value": "GPS RECEIVERS",
+        "replacement_value": "GPS Receivers",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "project",
+        "source_value": "USGS_SOFIA",
+        "replacement_value": "USGS SOFIA",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "processing_level",
+        "source_value": "L1T",
+        "replacement_value": "1T",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "processing_level",
+        "source_value": "Level 1",
+        "replacement_value": "1",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "processing_level",
+        "source_value": "Level 2",
+        "replacement_value": "2",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "processing_level",
+        "source_value": "Level 3",
+        "replacement_value": "3",
+        "reportable": true,
+        "order": 0
+      },
+      {
+        "type": "ignore",
+        "field": "processing_level",
+        "source_value": "NA",
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "organization",
+        "source_value": "NASA/NSIDC_DAAC",
+        "replacement_value": "NSIDC",
+        "order": 0
+      },
+      {
+        "type": "alias",
+        "field": "tiling_system_name",
+        "source_value": "SOURCE_TILE",
+        "replacement_value": "REPLACEMENT_TILE",
+        "order": 0
+      },
+
+      {"type": "capitalize", "field": "platform", "source_value": "TERRA", "order": 0},
+      {"type": "capitalize", "field": "platform", "source_value": "AQUA", "order": 0},
+
+      {"type": "ignore", "field": "platform", "source_value": "Aircraft", "order": 0},
+
+      {"type": "priority", "field": "instrument", "source_value": "MODIS", "order": 10, "priority": 10},
+      {"type": "priority", "field": "instrument", "source_value": "ASTER", "order": 10, "priority": 10},
+      {"type": "priority", "field": "platform", "source_value": "Terra", "order": 10, "priority": 10},
+      {"type": "priority", "field": "platform", "source_value": "Aqua", "order": 10, "priority": 10},
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "0 to 1 meter",
+          "reportable": false,
+          "source_value": "0 to 1 meter",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "1 to 30 meters",
+          "reportable": false,
+          "source_value": "1 to 30 meters",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "30 to 100 meters",
+          "reportable": false,
+          "source_value": "30 to 100 meters",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "100 to 250 meters",
+          "reportable": false,
+          "source_value": "100 to 250 meters",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "250 to 500 meters",
+          "reportable": false,
+          "source_value": "250 to 500 meters",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "500 to 1000 meters",
+          "reportable": false,
+          "source_value": "500 to 1000 meters",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "1 to 10 km",
+          "reportable": false,
+          "source_value": "1 to 10 km",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "10 to 50 km",
+          "reportable": false,
+          "source_value": "10 to 50 km",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "50 to 100 km",
+          "reportable": false,
+          "source_value": "50 to 100 km",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "100 to 250 km",
+          "reportable": false,
+          "source_value": "100 to 250 km",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "250 to 500 km",
+          "reportable": false,
+          "source_value": "250 to 500 km",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "500 to 1000 km",
+          "reportable": false,
+          "source_value": "500 to 1000 km",
+          "type": "horizontal_range_facets"
+      },
+      {
+          "field": "horizontal_range_facets",
+          "order": 0,
+          "replacement_value": "1000 km & above",
+          "reportable": false,
+          "source_value": "1000 km & above",
+          "type": "horizontal_range_facets"
+      }
+]

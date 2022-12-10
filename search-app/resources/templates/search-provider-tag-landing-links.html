@@ -1,0 +1,50 @@
+{% extends "templates/search-base.html" %}
+
+{% block title %}{{ app-title }} - Landing Pages for {{ provider-id}} {{ tag-name }} Collections{% endblock %}
+
+{% block main-content %}
+<h2 class="cover-heading">Provider Holdings Directory</h2>
+<h3 class="cover-heading">{{ tag-name }}</h3>
+<h4 class="cover-heading">Landing Pages for {{ provider-id}}</h4>
+
+<p>
+  Listed below are all of the EOSDIS holdings for the {{ provider-id }} provider.
+  Each is linked to the collection's landing page.
+</p>
+
+<div class="table-container">
+  <table id="data-providers" class="responsive-table">
+    <thead>
+      <tr>
+        <th>Collection</th>
+        <th>Short Name</th>
+        <th>Version</th>
+        <th>Directory</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for holding in holdings %}
+      <tr>
+        <td>
+          <a href="{{ holding.canonical-link-href }}">{{ holding.entry-title }}</a>
+        </td>
+        <td>
+          {{ holding.short-name }}
+        </td>
+        <td>
+          {{ holding.version-id }}
+        </td>
+        <td>
+          {% if holding.granule-count %}
+            <a id="{{ holding.concept-id }}-virtual-directory-link"
+               href="{{ virtual-directory-url }}collections/{{ holding.concept-id }}">Browse {{ holding.granule-count }} Granule{% if holding.granule-count > 1 %}s{% endif %}</a>
+          {% else %}
+            <span id="{{ holding.concept-id }}-no-granules-msg">No Granules</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

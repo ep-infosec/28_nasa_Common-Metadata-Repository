@@ -1,0 +1,39 @@
+{
+  "name": "browse-scaler",
+  "version": "1.0.0",
+  "description": "Serverless image resizing",
+  "readme": "Serverless image resizing",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "dependencies": {
+    "aws-sdk": "^2.1200.0",
+    "node-fetch": "^2.6.7",
+    "redis": "^2.8.0",
+    "sharp": "^0.30.0"
+  },
+  "scripts": {
+    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions",
+    "test": "jest --coverage",
+    "ci-test": "jest --coverage --config jest.config.junit_output.js",
+    "local-test": "jest --config jest.config.js",
+    "lint": "./node_modules/.bin/eslint \"*.js\""
+  },
+  "devDependencies": {
+    "aws-sdk-mock": "^5.2.1",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.20.6",
+    "jest": "^24.9.0",
+    "jest-junit": "^6.4.0",
+    "nock": "^13.1.1",
+    "prettier": "^1.19.1",
+    "sinon": "^11.1.2"
+  },
+  "resolutions": {
+    "node-fetch": "3.2.10"
+  }
+}
